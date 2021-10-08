@@ -73,8 +73,11 @@ def get_encoder(name, in_channels=3, depth=5, weights=None, output_stride=32, **
             raise KeyError("Wrong pretrained weights `{}` for encoder `{}`. Available options are: {}".format(
                 weights, name, list(encoders[name]["pretrained_settings"].keys()),
             ))
-        encoder.load_state_dict(model_zoo.load_url(settings["url"]))
-
+        if name.startswith("medical"):
+            encoder.load_state_dict(model_zoo.load_url(settings["url"]))
+        else:
+            encoder.load_state_dict(torch.load(settings["url"]))
+            
     encoder.set_in_channels(in_channels, pretrained=weights is not None)
     if output_stride != 32:
         encoder.make_dilated(output_stride)
