@@ -1,6 +1,6 @@
 import functools
 import torch.utils.model_zoo as model_zoo
-
+import torch
 from .resnet import resnet_encoders
 from .dpn import dpn_encoders
 from .vgg import vgg_encoders
@@ -77,7 +77,7 @@ def get_encoder(name, in_channels=3, depth=5, weights=None, output_stride=32, **
             encoder.load_state_dict(model_zoo.load_url(settings["url"]))
         else:
             encoder.load_state_dict(torch.load(settings["url"]))
-            
+
     encoder.set_in_channels(in_channels, pretrained=weights is not None)
     if output_stride != 32:
         encoder.make_dilated(output_stride)
