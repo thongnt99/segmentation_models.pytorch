@@ -77,7 +77,16 @@ new_settings = {
     },
     "resnet50": {
         "ssl": "https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnet50-08389792.pth",
-        "swsl": "https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnet50-16a12f1b.pth"
+        "swsl": "https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnet50-16a12f1b.pth",
+        "medical-jigsaw": "/netscratch/paliwal/ssl_experiments/checkpoints_jigsaw_120epochs_4V100_16GB/converted_vissl_final_model.torch",
+        "medical-simclr": "/netscratch/paliwal/ssl_experiments/checkpoints_simclr_100epochs_4A100/converted_vissl_final_model.torch",
+        "medical-swav": "/netscratch/paliwal/ssl_experiments/checkpoints_swav_100epochs_4A100/converted_vissl_final_model.torch",
+        "medical-rotnet": "/netscratch/paliwal/ssl_experiments/checkpoints_rotnet_120epochs_4A100/converted_vissl_final_model.torch",
+        "medical-dino": "/netscratch/paliwal/ssl_experiments/checkpoints_dino_100epochs_4A100/converted_vissl_final_model.torch",
+        "medical-moco": "/netscratch/paliwal/ssl_experiments/checkpoints_moco_180epochs_4A100/converted_vissl_final_model.torch",
+        "medical-barlow": "/netscratch/paliwal/ssl_experiments/checkpoints_barlow_100epochs_4A100/converted_vissl_final_model.torch",
+        "medical-deepcluster": "/netscratch/paliwal/ssl_experiments/checkpoints_deepcluster_100epochs_4A100_16GCPU/converted_vissl_final_model.torch",
+        "medical-deepclusterv2": "/netscratch/paliwal/ssl_experiments/checkpoints_deepclusterv2_100epochs_2A100/converted_vissl_final_model.torch"
     },
     "resnext50_32x4d": {
         "imagenet": "https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth",
