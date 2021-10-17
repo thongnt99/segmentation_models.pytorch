@@ -73,7 +73,7 @@ def get_encoder(name, in_channels=3, depth=5, weights=None, output_stride=32, **
             raise KeyError("Wrong pretrained weights `{}` for encoder `{}`. Available options are: {}".format(
                 weights, name, list(encoders[name]["pretrained_settings"].keys()),
             ))
-        if not name.startswith("medical"):
+        if not weights.startswith("medical"):
             encoder.load_state_dict(model_zoo.load_url(settings["url"]))
         else:
             encoder.load_state_dict(torch.load(settings["url"]))
